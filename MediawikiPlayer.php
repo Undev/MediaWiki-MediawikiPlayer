@@ -68,7 +68,7 @@ class MediawikiPlayer
       	$wgMWPlayerDir, 
       	$wgMWPlayerUseSWFObject;
 
-      $wgMWPlayerDir = $wgScriptPath  . '/extensions/MediawikiPlayer';;
+      $wgMWPlayerDir = $wgScriptPath  . '/extensions/MediawikiPlayer';
       $wgMWPlayerConfig = array();
 
       $wgMWPlayerUseSWFObject = false;
@@ -202,6 +202,7 @@ class MediawikiPlayer
       }
 		
 		// load the player
+      $code .= "<script type='text/javascript'>jwplayer.key=\"D/o6DSDk7r3TQqC57A1ZKrrKVn1t+/bF5ORGaA==\";</script>\n";
       $code .= "<script type='text/javascript'>\n";
       $code .= "// <![CDATA[\n";
 
@@ -215,7 +216,7 @@ class MediawikiPlayer
       }
       else
       {      	
-			$code .= "jwplayer($wgMWPlayerIDJS).setup({flashplayer: $playerUrl";	
+			$code .= "jwplayer($wgMWPlayerIDJS).setup({flashplayer: $playerUrl";
       }
       
 	  
